@@ -41,7 +41,7 @@ textarea,
 select {
 	font: inherit;
 }
-/*
+/* 
     7. Avoid text overflows
   */
 p,
@@ -78,7 +78,7 @@ h6 {
 	--color-slate-900: hsl(202, 55%, 16%);
 
 	/* Font size */
-	--font-size-paragraph: 16px;
+	--font-size-paragraph: 1rem;
 
 	/* Font family */
 	--font-family-primary: "Plus Jakarta Sans", sans-serif;
@@ -88,11 +88,38 @@ h6 {
 	--font-weight-medium: 500;
 }
 
-/* Usage example */
+/* Pseudo-classes */
+.subtitle { 
+	color: var(--color-slate-700);
+}
+
 body {
+	font-family: var(--font-family-primary);
+	font-size: var(--font-size-paragraph);
 	background-color: var(--color-slate-100);
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
 }
 
 .container {
 	background-color: var(--color-white);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 10rem;
+}
+
+.calculator,
+.results {
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.calculator {
+	background-color: var(--color-white);
+}
+
+.results {
+	background-color: var(--color-slate-900);
 }

@@ -20,15 +20,53 @@
 		<title>Frontend Mentor | Mortgage repayment calculator</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="script.js"></script>
-	</head> 
+	</head>
 	<body>
 		<div class="container">
 			<div class="calculator">
 				<div class="title">
 					<h1>Mortgage Calculator</h1>
+					<button class="subtitle"><u>Clear All</u></button>
 				</div>
+
+				<form action="">
+					<div class="mortgage-amout">
+						<label class="subtitle" for="mortgage-amount"
+							>Mortgage Amount</label
+						>
+						<input type="number" id="mortgage-amount" required />
+					</div>
+					<div class="mortgage-term">
+						<label class="subtitle" for="mortgage-term">Mortgage Term</label>
+						<input type="number" id="mortgage-term" required />
+					</div>
+					<div class="interest-rate">
+						<label class="subtitle" for="interest-rate"
+							>Annual Interest Rate</label
+						>
+						<input type="number" id="interest-rate" required />
+					</div>
+					<div class="mortgage-type">
+						<label class="subtitle" for="mortgage-type">Mortgage Type</label>
+						<div class="repayment">
+							<input type="radio" name="mortgage-type" id="repayment" />
+							<label for="mortgage-type">Repayment</label>
+						</div>
+						<div class="interest-only">
+							<input type="radio" name="mortgage-type" id="interest-only" />
+							<label for="mortgage-type">Interest Only</label>
+						</div>
+					</div>
+				</form>
 			</div>
-			<div class="results"></div>
+			<div class="results">
+				<img src="assets/images/illustration-empty.svg" alt="calculator icon" />
+				<h1>Results shown here</h1>
+				<p>
+					Complete the form and click "calculate repayment" to see what your
+					monthly repayment would be.
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

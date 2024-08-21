@@ -103,6 +103,8 @@ body {
 	place-content: center;
 }
 
+/* Main Container */
+
 .container {
 	background-color: var(--color-white);
 	display: grid;
@@ -116,10 +118,17 @@ body {
     border-radius: 0.5rem;
 }
 
+/* Calculator */
+
 .calculator {
 	background-color: var(--color-white);
 }
 
+/* Results */
+
 .results {
 	background-color: var(--color-slate-900);
+	display: grid;
+	grid-template-columns: 1fr;
+	place-content: center;
 }

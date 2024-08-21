@@ -24,39 +24,44 @@
 	<body>
 		<div class="container">
 			<div class="calculator">
-				<div class="title">
+				<header class="title">
 					<h1>Mortgage Calculator</h1>
-					<button class="subtitle"><u>Clear All</u></button>
-				</div>
+					<button class="subtitle" type="reset"><u>Clear All</u></button>
+				</header>
 
-				<form action="">
-					<div class="mortgage-amout">
-						<label class="subtitle" for="mortgage-amount"
-							>Mortgage Amount</label
-						>
+				<form id="mortgage-form">
+					<div class="form-group">
+						<label for="mortgage-amount">Mortgage Amount</label>
 						<input type="number" id="mortgage-amount" required />
 					</div>
-					<div class="mortgage-term">
-						<label class="subtitle" for="mortgage-term">Mortgage Term</label>
+					<div class="form-group">
+						<label for="mortgage-term">Mortgage Term</label>
 						<input type="number" id="mortgage-term" required />
 					</div>
-					<div class="interest-rate">
-						<label class="subtitle" for="interest-rate"
-							>Annual Interest Rate</label
-						>
+					<div class="form-group">
+						<label for="interest-rate">Annual Interest Rate</label>
 						<input type="number" id="interest-rate" required />
 					</div>
-					<div class="mortgage-type">
-						<label class="subtitle" for="mortgage-type">Mortgage Type</label>
-						<div class="repayment">
-							<input type="radio" name="mortgage-type" id="repayment" />
-							<label for="mortgage-type">Repayment</label>
-						</div>
-						<div class="interest-only">
-							<input type="radio" name="mortgage-type" id="interest-only" />
-							<label for="mortgage-type">Interest Only</label>
+					<div class="form-group">
+						<label for="mortgage-type">Mortgage Type</label>
+						<div class="radio-group">
+							<input
+								type="radio"
+								name="mortgage-type"
+								id="repayment"
+								value="repayment"
+							/>
+							<label for="repayment">Repayment</label>
+							<input
+								type="radio"
+								name="mortgage-type"
+								id="interest-only"
+								value="interest-only"
+							/>
+							<label for="interest-only">Interest Only</label>
 						</div>
 					</div>
+					<button type="submit">Calculate Repayment</button>
 				</form>
 			</div>
 			<div class="results">

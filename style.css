@@ -141,8 +141,13 @@ body {
 .calculator {
 	background-color: var(--clr-white);
 	display: grid;
-	grid-template-columns: repeat(1fr, 2);
+	grid-template-rows: repeat(2, 1fr);
 	border-radius: 1rem;
+}
+
+.calculator header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 /* Results */
@@ -150,15 +155,16 @@ body {
 .results {
 	color: var(--clr-white);
 	background-color: var(--clr-slate-900);
-	display: grid;
-	grid-template-columns: 1fr;
-	place-items: center;
 	border-radius: 0rem 1rem 1rem 4rem;
+}
+
+.results h1 {
+	text-align: center;
 }
 
 .results p {
 	font-size: var(--fs-300);
 	font-weight: var(--fw-medium);
-	text-align: center;
 	color: var(--clr-slate-300);
+	text-align: center;
 }

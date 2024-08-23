@@ -111,6 +111,14 @@ h1 {
 	font-weight: var(--fw-bold);
 }
 
+label {
+	font-size: var(--fs-300);
+	font-weight: var(--fw-medium);
+	color: var(--clr-slate-700);
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
 body {
 	font-family: var(--ff-primary);
 	font-size: var(--fs-400);

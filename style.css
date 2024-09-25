@@ -1,4 +1,4 @@
-/*
+/* 
   1. Use a more-intuitive box-sizing model.
 */
 *,
@@ -101,7 +101,11 @@ h6 {
 	--fw-medium: 500;
 }
 
-/* Pseudo-classes */
+
+.span-column {
+	grid-column: span 2;
+}
+
 .subtitle {
 	color: var(--clr-slate-700);
 }
@@ -115,7 +119,7 @@ label {
 	font-size: var(--fs-300);
 	font-weight: var(--fw-medium);
 	color: var(--clr-slate-700);
-	display: block;
+	/* display: block; it cause it to force label to be up the input */
 	margin-bottom: 0.5rem;
 }
 
@@ -129,7 +133,6 @@ body {
 	place-content: center;
 }
 
-/* Main Container */
 
 .container {
 	background-color: var(--clr-white);
@@ -142,10 +145,17 @@ body {
 .calculator,
 .results {
 	padding: 2rem;
-	width: 100%;
 }
 
-/* Calculator */
+
+
+button {
+	width: 80%;
+}
+
+input[type="number"] {
+	width: 100%;
+}
 
 .calculator {
 	background-color: var(--clr-white);
@@ -167,7 +177,25 @@ button[type="reset"] {
 	font-weight: var(--fw-bold);
 }
 
-/* Results */
+
+form {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#mortgage-amouts {
+	grid-column: span 2;
+}
+
+.result {
+	color: var(--clr-white);
+	background-color: var(--clr-lime);
+	border: none;
+	border-radius: 1rem;
+	padding: 1rem;
+	
+}
 
 .results {
 	color: var(--clr-white);

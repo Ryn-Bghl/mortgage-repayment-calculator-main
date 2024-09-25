@@ -1,82 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- displays site properly based on user's device -->
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="./assets/images/favicon-32x32.png"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap"
-			rel="stylesheet"
-		/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap"
+            rel="stylesheet"
+        />
 
-		<title>Frontend Mentor | Mortgage repayment calculator</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="calculator">
-				<header class="title">
-					<h1>Mortgage Calculator</h1>
-					<button class="subtitle" type="reset"><u>Clear All</u></button>
-				</header>
+        <title>Frontend Mentor | Mortgage repayment calculator</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculator">
+                <header class="title">
+                    <h1>Mortgage Calculator</h1>
+                    <button class="subtitle" type="reset">
+                        <u>Clear All</u>
+                    </button>
+                </header>
 
-				<form id="mortgage-form">
-					<div class="form-group">
-						<label for="mortgage-amount">Mortgage Amount</label>
-						<input type="number" id="mortgage-amount" required />
-					</div>
-					<div class="form-group">
-						<label for="mortgage-term">Mortgage Term</label>
-						<input type="number" id="mortgage-term" required />
-					</div>
-					<div class="form-group">
-						<label for="interest-rate">Annual Interest Rate</label>
-						<input type="number" id="interest-rate" required />
-					</div>
-					<div class="form-group">
-						<label for="mortgage-type">Mortgage Type</label>
-						<div class="radio-group">
-							<input
-								type="radio"
-								name="mortgage-type"
-								id="repayment"
-								value="repayment"
-							/>
-							<label for="repayment">Repayment</label>
-							<input
-								type="radio"
-								name="mortgage-type"
-								id="interest-only"
-								value="interest-only"
-							/>
-							<label for="interest-only">Interest Only</label>
-						</div>
-					</div>
-					<button type="submit">Calculate Repayment</button>
-				</form>
-			</div>
-			<div class="results">
-				<center>
-					<img
-						src="assets/images/illustration-empty.svg"
-						alt="calculator icon"
-					/>
-				</center>
-				<h1>Results shown here</h1>
-				<p>
-					Complete the form and click "calculate repayment" to see what your
-					monthly repayment would be.
-				</p>
-			</div>
-		</div>
-	</body>
+                <form id="mortgage-form">
+                    <div class="form-group span-column">
+                        <label for="mortgage-amount">Mortgage Amount</label>
+                        <input type="number" id="mortgage-amount" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="mortgage-term">Mortgage Term</label>
+                        <input type="number" id="mortgage_term" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="interest-rate">Annual Interest Rate</label>
+                        <input type="number" id="interest_rate" required />
+                    </div>
+                    <div class="form-group span-column">
+                        <div class="radio-group"></div>
+
+                        <div class="radio-group">
+                            <div class="repayment">
+                                <input
+                                    type="radio"
+                                    name="mortgage-type"
+                                    id="repayment"
+                                    value="repayment"
+                                />
+                                <label for="mortgage-type">
+                                    Mortgage Type</label
+                                >
+                            </div>
+                            <div class="interest-only">
+                                <input
+                                    type="radio"
+                                    name="mortgage-type"
+                                    id="interest-only"
+                                    value="interest-only"
+                                />
+                                <label for="interest-only">Interest Only</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="result span-column" type="submit">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="#133041"
+                                d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"
+                            />
+                        </svg>
+                        Calculate Repayment
+                    </button>
+                </form>
+            </div>
+            <div class="results">
+                <center>
+                    <img
+                        src="assets/images/illustration-empty.svg"
+                        alt="calculator icon"
+                    />
+                </center>
+                <h1>Results shown here</h1>
+                <p>
+                    Complete the form and click "calculate repayment" to see
+                    what your monthly repayment would be.
+                </p>
+            </div>
+        </div>
+    </body>
 </html>

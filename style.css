@@ -117,10 +117,16 @@ h6 {
   gap: 1.25rem
 }
 
+.form__main__input input[type="number"] {
+  color: var(--clr-slate-900);
+}
+
 .form__main__input h2 {
   font-size: var(--ff-primary);
   padding-bottom: 0.5rem
 }
+
+
 
 .input {
   display: flex;

@@ -1,3 +1,6 @@
+# SCSS 7 to 1 Pattern
+
+```scss
 @forward "base";
 /* 
 - reset / normalize
@@ -47,4 +50,4 @@
 - Bootstrap
 - jQuery
 */
-
+```

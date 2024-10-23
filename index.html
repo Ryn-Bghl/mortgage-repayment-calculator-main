@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="js/main.js" defer></script>
+
     <link
       rel="icon"
       type="image/png"
@@ -32,24 +34,40 @@
       <div class="form__main">
         <div class="form__main__input">
           <h2>Mortgage Amount</h2>
-          <input type="number" name="mortgage_amount" id="mortgage_amount" />
+          <div class="input">
+            <span>£</span>
+            <input type="number" name="mortgage_amount" id="mortgage_amount" />
+          </div>
         </div>
         <div class="form__main__input">
           <h2>Mortgage Term</h2>
-          <input type="number" name="mortgage_term" id="mortgage_term" />
+          <div class="input">
+            <input type="number" name="mortgage_term" id="mortgage_term" /><span
+              >years</span
+            >
+          </div>
         </div>
         <div class="form__main__input">
           <h2>Interest Rate</h2>
-          <input type="number" name="interest_rate" id="interest_rate" />
+          <div class="input">
+            <span>%</span
+            ><input type="number" name="interest_rate" id="interest_rate" />
+          </div>
         </div>
-        <div class="form__main__input">
+        <div class="mortgage_type">
           <h2>Mortgage Type</h2>
           <div class="form__main__input__repayment">
-            <input type="radio" name="mortgage_type" id="repayment__input" />
+            <input
+              onchange="changeColor()"
+              type="radio"
+              name="mortgage_type"
+              id="repayment__input"
+            />
             <label class="repayment__label" for="">Repayment</label>
           </div>
           <div class="form__main__input__interest-only">
             <input
+              onchange="changeColor()"
               type="radio"
               name="mortgage_type"
               id="interest-only__input"
@@ -57,7 +75,12 @@
             <label class="interest-only__label" for="">Interest Only</label>
           </div>
         </div>
-        <button class="form__main__calc-btn">Calculate Repayment</button>
+        <div class="calc">
+          <button class="form__main__calc-btn">
+            <img src="./assets/images/icon-calculator.svg" alt="" />
+            Calculate Repayment
+          </button>
+        </div>
       </div>
     </form>
     <div class="results">

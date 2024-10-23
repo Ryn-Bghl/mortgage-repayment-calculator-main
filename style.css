@@ -74,8 +74,12 @@ h6 {
   --clr-slate-900: hsl(202, 55%, 16%);
 
   /* font-size */
+  --fz-subtitle: 0.875rem;
+  /* 14px */
   --fz-primary: 1rem;
   /* 16px */
+  --fz-header: 1.5rem;
+  /* 24px */
 
   /* font family */
   --ff-primary: "Plus Jakarta Sans", sans-serif;
@@ -87,10 +91,10 @@ h6 {
 }
 
 * {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1rem;
-  color: #4e6e7e;
-  font-weight: 500
+  font-family: var(--ff-primary);
+  font-size: var(--fz-primary);
+  color: var(--clr-slate-700);
+  font-weight: var(--fw-regular)
 }
 
 .form {
@@ -102,12 +106,9 @@ h6 {
 }
 
 .form__header__title {
-  font-weight: 700;
-  font-size: 1.5rem
-}
-
-.form__header__reset-btn {
-  color: #4e6e7e
+  color: var(--clr-slate-900);
+  font-weight: var(--fw-bold);
+  font-size: var(--fz-header)
 }
 
 .form__main {
@@ -117,30 +118,88 @@ h6 {
 }
 
 .form__main__input h2 {
-  padding-bottom: .5rem
+  font-size: var(--ff-primary);
+  padding-bottom: 0.5rem
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--clr-slate-900);
+  background-color: var(--clr-slate-100);
+  border-radius: .25rem;
+}
+
+.input span {
+  margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .form__main__input input[type=number] {
-  border-radius: .25rem;
-  border: 1px solid #122f3f;
-  padding: .5rem .75rem;
   width: 100%;
-  -webkit-appearance: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: none;
   appearance: none;
-  -moz-appearance: textfield
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.mortgage_type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .form__main__input__repayment,
 .form__main__input__interest-only {
-  border: 1px solid #122f3f;
+  border: 1px solid var(--clr-slate-900);
   border-radius: .25rem;
-  padding: .5rem .75rem
+  padding: 0.5rem 0.75rem;
 }
 
-.form__main__input__repayment input[type=radio],
-.form__main__input__interest-only input[type=radio] {
-  width: 1rem;
-  height: 1rem;
-  accent-color: #dbdb39;
-  border: red !important
+.form__main__input__repayment label,
+.form__main__input__interest-only label {
+  color: var(--clr-slate-900);
+  font-size: var(--fz-primary);
+  font-weight: var(--fw-bold);
+  padding-left: 1rem;
+}
+
+.form__main__calc-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--clr-slate-900);
+  background-color: var(--clr-lime);
+  border-radius: 2rem;
+  border: none;
+  padding: 0.75rem 0;
+  font-weight: var(--fw-bold);
+}
+
+.results {
+  padding: 1.5rem 1rem;
+  background-color: var(--clr-slate-900);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.results img {
+  display: block;
+  width: 60%;
+  margin: auto;
+}
+
+.results h1 {
+  font-size: var(--fz-header);
+  font-weight: var(--fw-bold);
+  color: white;
+}
+
+.results p {
+  color: var(--clr-slate-500);
+  font-size: var(--fz-primary);
 }

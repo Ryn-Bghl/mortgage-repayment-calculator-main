@@ -1,8 +1,14 @@
 @forward "base";
-@forward "components";
+// @forward "components";
 @forward "layout";
-@forward "pages";
-@forward "themes";
-@forward "vendors";
+// @forward "pages";
+// @forward "themes";
+// @forward "vendors";
 
 @use "./util/" as u;
+
+.form__header {
+  &__title {
+    background-color: u.$slate-700;
+  }
+}

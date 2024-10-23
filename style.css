@@ -58,19 +58,24 @@ h6 {
 }
 
 :root {
-  /* colors */
+  /* breakpoint */
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
   /* primary */
   --clr-lime: hsl(61, 70%, 52%);
   --clr-red: hsl(4, 69%, 50%);
 
   /* slate colors */
-  --clr-slate-900: hsl(202, 86%, 28%);
-  --clr-slate-800: hsl(202, 86%, 23%);
-  --clr-slate-700: hsl(202, 86%, 18%);
-  --clr-slate-600: hsl(202, 86%, 15%);
+  --clr-slate-100: hsl(202, 86%, 94%);
+  --clr-slate-300: hsl(203, 41%, 72%);
+  --clr-slate-500: hsl(200, 26%, 54%);
+  --clr-slate-700: hsl(200, 24%, 40%);
+  --clr-slate-900: hsl(202, 55%, 16%);
 
   /* font-size */
-  --fz-primary: 1rem; /* 16px */
+  --fz-primary: 1rem;
+  /* 16px */
 
   /* font family */
   --ff-primary: "Plus Jakarta Sans", sans-serif;
@@ -139,5 +144,3 @@ h6 {
   accent-color: #dbdb39;
   border: red !important
 }
-
-/*# sourceMappingURL=style.css.map */

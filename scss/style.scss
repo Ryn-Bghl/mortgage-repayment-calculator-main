@@ -6,9 +6,3 @@
 // @forward "vendors";
 
 @use "./util/" as u;
-
-.form__header {
-  &__title {
-    background-color: u.$slate-700;
-  }
-}

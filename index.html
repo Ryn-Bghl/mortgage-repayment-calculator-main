@@ -84,16 +84,44 @@
       </div>
     </form>
     <div class="results">
-      <img
-        class="results__img"
-        src="./assets/images/illustration-empty.svg"
-        alt=""
-      />
-      <h1 class="results__title">Results shown here</h1>
-      <p class="results__p">
-        Complete the form and click “calculate repayments” to see what your
-        monthly repayments would be.
-      </p>
+       <div class="results__empty ">
+        <img
+          class="results__img"
+          src="./assets/images/illustration-empty.svg"
+          alt=""
+        />
+        <h1 class="results__title">Results shown here</h1>
+        <p class="results__p">
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+      <div class="results__full hidden">
+        <h1 class="results__title">Your results</h1>
+        <p class="results__p">
+          Your results are shown below based on the information you provided. To
+          adjust the results, edit the form and click “calculate repayments”
+          again.
+        </p>
+        <div class="calculation_results ">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <h2>Your monthly repayments</h2>
+                  <span class="monthly_repayments">1,797.74</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Total you'll repay over the term</h2>
+                  <span class="total_repayments">539,322.94</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </body>
 </html>

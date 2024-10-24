@@ -139,10 +139,12 @@ h6 {
   padding-bottom: 0.5rem
 }
 
+
 .input {
   overflow: hidden;
   border: 1px solid var(--clr-slate-500);
   background-color: var(--clr-slate-100);
+  font-weight: var(--fw-bold);
   border-radius: .25rem;
   display: flex;
   width: 100%;
@@ -150,6 +152,7 @@ h6 {
 
 .input span {
   margin: 0.5rem 1rem 0.5rem 1rem;
+  font-weight: var(--fw-bold);
 }
 
 .form__main__input input[type=text] {
@@ -261,7 +264,7 @@ DESKTOP VERSION
 }
 
 .results p {
-  color: var(--clr-slate-500);
+  color: var(--clr-slate-300);
   font-size: var(--fz-primary);
 }
 
@@ -288,8 +291,8 @@ DESKTOP VERSION
 
 
 .calculation_results h2 {
-  font-size: var(--fz-primary);
-  color: var(--clr-slate-500);
+  font-size: /* var(--fz-primary) */ 0.85rem;
+  color: var(--clr-slate-300);
 }
 
 .calculation_results td {
@@ -306,7 +309,7 @@ DESKTOP VERSION
 }
 
 .calculation_results tr:nth-child(2) span {
-  font-size: var(--fz-header);
+  font-size: /* var(--fz-header) */ 1.25rem;
   font-weight: var(--fw-bold);
   color: white;
 }

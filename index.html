@@ -26,10 +26,11 @@
   </head>
 
   <body>
-    <form class="form" action="/">
+    <!-- <form class="form" action="/"> -->
+    <div class="form">
       <div class="form__header">
         <h1 class="form__header__title">Mortgage Calculator</h1>
-        <button class="form__header__reset-btn" onclick="reset()">
+        <button class="form__header__reset-btn" onclick="resetInput()">
           Clear All
         </button>
       </div>
@@ -53,7 +54,12 @@
           <h2>Interest Rate</h2>
           <div class="input">
             <span>%</span
-            ><input type="number" name="interest_rate" id="interest_rate" />
+            ><input
+              type="number"
+              step="0.01"
+              name="interest_rate"
+              id="interest_rate"
+            />
           </div>
         </div>
         <div class="mortgage_type">
@@ -78,15 +84,19 @@
           </div>
         </div>
         <div class="calc">
-          <button class="form__main__calc-btn">
+          <button
+            onclick="calculateMonthlyPayment()"
+            class="form__main__calc-btn"
+          >
             <img src="./assets/images/icon-calculator.svg" alt="" />
             Calculate Repayment
           </button>
         </div>
       </div>
-    </form>
+    </div>
+    <!-- </form> -->
     <div class="results">
-      <div class="results__empty">
+      <div class="results__empty hidden">
         <img
           class="results__img"
           src="./assets/images/illustration-empty.svg"
@@ -98,7 +108,7 @@
           monthly repayments would be.
         </p>
       </div>
-      <div class="results__full hidden">
+      <div class="results__full">
         <h1 class="results__title">Your results</h1>
         <p class="results__p">
           Your results are shown below based on the information you provided. To

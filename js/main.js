@@ -44,7 +44,7 @@ function calculateMonthlyPayment() {
   console.log(isInterestOnly);
 
   // Convert the annual interest rate to a monthly rate
-  let monthlyInterestRate = parseInt(interestRateInput.value) / 100 / 12;
+  let monthlyInterestRate = parseFloat(interestRateInput.value) / 100 / 12;
 
   let monthlyRepayment, totalRepayment;
 
@@ -80,35 +80,3 @@ function calculateMonthlyPayment() {
   document.querySelector(".total_repayments").innerText =
     totalRepayment.toFixed(2);
 }
-
-/* // Example usage:
-let parseInt(mortgageAmountInput.value) = 300000;
-let mortgageTermInput = 25;
-let annualInterestRate = 5.25;
-
-// For 'repayment' mortgage
-let resultRepayment = calculateMortgage(
-  parseInt(mortgageAmountInput.value),
-  mortgageTermInput,
-  annualInterestRate,
-  "repayment"
-);
-console.log(
-  "Monthly Repayment (Repayment): €" + resultRepayment.monthlyRepayment
-);
-console.log("Total Repayment (Repayment): €" + resultRepayment.totalRepayment);
-
-// For 'interestOnly' mortgage
-let resultInterestOnly = calculateMortgage(
-  parseInt(mortgageAmountInput.value),
-  mortgageTermInput,
-  annualInterestRate,
-  "interestOnly"
-);
-console.log(
-  "Monthly Repayment (Interest Only): €" + resultInterestOnly.monthlyRepayment
-);
-console.log(
-  "Total Repayment (Interest Only): €" + resultInterestOnly.totalRepayment
-);
- */

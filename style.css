@@ -126,8 +126,6 @@ h6 {
   padding-bottom: 0.5rem
 }
 
-
-
 .input {
   overflow: hidden;
   display: flex;
@@ -142,6 +140,7 @@ h6 {
 }
 
 .form__main__input input[type=number] {
+  outline: none;
   width: 100%;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: none;

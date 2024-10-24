@@ -118,6 +118,12 @@ h6 {
   font-size: var(--fz-header)
 }
 
+.form__header button {
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+}
+
 .form__main {
   flex-direction: column;
   display: flex;

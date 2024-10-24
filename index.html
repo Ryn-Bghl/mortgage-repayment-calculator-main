@@ -39,15 +39,23 @@
           <h2>Mortgage Amount</h2>
           <div class="input">
             <span>£</span>
-            <input type="number" name="mortgage_amount" id="mortgage_amount" />
+            <input
+              type="text"
+              oninput="formatNumber(this)"
+              name="mortgage_amount"
+              id="mortgage_amount"
+            />
           </div>
         </div>
         <div class="form__main__input">
           <h2>Mortgage Term</h2>
           <div class="input">
-            <input type="number" name="mortgage_term" id="mortgage_term" /><span
-              >years</span
-            >
+            <input
+              type="text"
+              oninput="formatNumber(this)"
+              name="mortgage_term"
+              id="mortgage_term"
+            /><span>years</span>
           </div>
         </div>
         <div class="form__main__input">
@@ -55,7 +63,7 @@
           <div class="input">
             <span>%</span
             ><input
-              type="number"
+              type="text"
               step="0.01"
               name="interest_rate"
               id="interest_rate"
@@ -96,7 +104,7 @@
     </div>
     <!-- </form> -->
     <div class="results">
-      <div class="results__empty hidden">
+      <div class="results__empty">
         <img
           class="results__img"
           src="./assets/images/illustration-empty.svg"
@@ -108,7 +116,7 @@
           monthly repayments would be.
         </p>
       </div>
-      <div class="results__full">
+      <div class="results__full hidden">
         <h1 class="results__title">Your results</h1>
         <p class="results__p">
           Your results are shown below based on the information you provided. To
@@ -121,13 +129,13 @@
               <tr>
                 <td>
                   <h2>Your monthly repayments</h2>
-                  <span class="monthly_repayments">1,797.74</span>
+                  <span class="monthly_repayments"></span>
                 </td>
               </tr>
               <tr>
                 <td>
                   <h2>Total you'll repay over the term</h2>
-                  <span class="total_repayments">539,322.94</span>
+                  <span class="total_repayments"></span>
                 </td>
               </tr>
             </tbody>

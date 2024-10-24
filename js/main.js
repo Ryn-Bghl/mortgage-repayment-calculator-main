@@ -37,8 +37,18 @@ function resetInput() {
   mortgageTypeRadioInputs[0].childNodes[5].style.borderColor = "";
 }
 
+function formatNumber(input) {
+  // Remove everything except digits
+  let value = input.value.replace(/\D/g, "");
+  // Format the number using US locale (commas for thousands)
+  value = Number(value).toLocaleString("en-US");
+  input.value = value;
+}
 /* calculateMonthlyPayment */
 function calculateMonthlyPayment() {
+  document.querySelector(".results__empty").classList.add("hidden");
+  document.querySelector(".results__full").classList.remove("hidden");
+
   var isRepayment =
     mortgageTypeRadioInputs[0].childNodes[3].childNodes[1].checked;
   var isInterestOnly =
@@ -59,7 +69,7 @@ function calculateMonthlyPayment() {
 
     // Calculate the monthly repayment using the amortization formula (repayment mortgage)
     monthlyRepayment =
-      (parseFloat(mortgageAmountInput.value) *
+      (parseFloat(mortgageAmountInput.value.replace(",", "")) *
         monthlyInterestRate *
         Math.pow(1 + monthlyInterestRate, totalPayments)) /
       (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
@@ -69,12 +79,12 @@ function calculateMonthlyPayment() {
   } else if (isInterestOnly) {
     // For interest-only, the monthly repayment is only the interest
     monthlyRepayment =
-      parseFloat(mortgageAmountInput.value) * monthlyInterestRate;
+      parseFloat(mortgageAmountInput.value.replace(",", "")) * monthlyInterestRate;
 
     // Total repayment is all interest payments over the term, plus the mortgage amount (principal)
     totalRepayment =
       monthlyRepayment * 12 * parseFloat(mortgageTermInput.value) +
-      parseFloat(mortgageAmountInput.value);
+      parseFloat(mortgageAmountInput.value.replace(",", ""));
   } else {
     throw "Invalid repayment type!";
   }

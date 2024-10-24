@@ -130,7 +130,7 @@ h6 {
   gap: 1.25rem
 }
 
-.form__main__input input[type="number"] {
+.form__main__input input[type="text"] {
   color: var(--clr-slate-900);
 }
 
@@ -152,7 +152,7 @@ h6 {
   margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
-.form__main__input input[type=number] {
+.form__main__input input[type=text] {
   padding: 0.5rem 1rem 0.5rem 1rem;
   appearance: none;
   -webkit-appearance: none;

@@ -30,7 +30,11 @@ function resetInput() {
   mortgageTermInput.value = "";
   interestRateInput.value = "";
   mortgageTypeRadioInputs[0].childNodes[3].childNodes[1].checked = false;
+  mortgageTypeRadioInputs[0].childNodes[3].style.backgroundColor = "";
+  mortgageTypeRadioInputs[0].childNodes[3].style.borderColor = "";
   mortgageTypeRadioInputs[0].childNodes[5].childNodes[1].checked = false;
+  mortgageTypeRadioInputs[0].childNodes[5].style.backgroundColor = "";
+  mortgageTypeRadioInputs[0].childNodes[5].style.borderColor = "";
 }
 
 /* calculateMonthlyPayment */
@@ -76,7 +80,13 @@ function calculateMonthlyPayment() {
   }
 
   document.querySelector(".monthly_repayments").innerText =
-    monthlyRepayment.toFixed(2);
+    monthlyRepayment.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
   document.querySelector(".total_repayments").innerText =
-    totalRepayment.toFixed(2);
+    totalRepayment.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
 }

@@ -157,6 +157,8 @@ h6 {
 
 .form__main__input__repayment,
 .form__main__input__interest-only {
+  display: flex;
+  align-items: center;
   border: 1px solid var(--clr-slate-900);
   border-radius: .25rem;
   padding: 0.5rem 0.75rem;
@@ -208,4 +210,36 @@ h6 {
 .results p {
   color: var(--clr-slate-500);
   font-size: var(--fz-primary);
+}
+
+input[type="radio"] {
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--clr-slate-900);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transform: translateY(-0.075em);
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--clr-lime);
+  transform: scale(0);
+}
+
+input[type="radio"]:checked {
+  border: 2px solid var(--clr-lime);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
 }

@@ -292,7 +292,7 @@ DESKTOP VERSION
 
 .calculation_results h2 {
   font-size: /* var(--fz-primary) */ 0.85rem;
-  color: var(--clr-slate-300);
+  color: var(--clr-slate-300);  
 }
 
 .calculation_results td {

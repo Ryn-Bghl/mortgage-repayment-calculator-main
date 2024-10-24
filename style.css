@@ -104,8 +104,17 @@ h6 {
   color: var(--clr-slate-700);
 }
 
+body {
+  background-color: var(--clr-slate-100);
+}
+
+.main {
+  background-color: white;
+  /* min-height: 100dvh; */
+}
+
 .form {
-  margin: 1.75rem 1.25rem
+  padding: 1.75rem 1.25rem
 }
 
 .form__header {
@@ -236,10 +245,15 @@ DESKTOP VERSION
   border-radius: 2rem;
   padding: 0.75rem 0;
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   width: 100%;
   border: none;
 }
+
+/* .results__empty,
+.results__full {
+  height: 100%;
+} */
 
 .results .results__empty {
   background-color: var(--clr-slate-900);
@@ -253,7 +267,7 @@ DESKTOP VERSION
 
 .results .results__empty img {
   display: block;
-  margin: auto;
+  margin: 0 auto;
   width: 60%;
 }
 
@@ -291,8 +305,10 @@ DESKTOP VERSION
 
 
 .calculation_results h2 {
-  font-size: /* var(--fz-primary) */ 0.85rem;
-  color: var(--clr-slate-300);  
+  font-size:
+    /* var(--fz-primary) */
+    0.85rem;
+  color: var(--clr-slate-300);
 }
 
 .calculation_results td {
@@ -309,7 +325,9 @@ DESKTOP VERSION
 }
 
 .calculation_results tr:nth-child(2) span {
-  font-size: /* var(--fz-header) */ 1.25rem;
+  font-size:
+    /* var(--fz-header) */
+    1.25rem;
   font-weight: var(--fw-bold);
   color: white;
 }
@@ -320,4 +338,78 @@ DESKTOP VERSION
 
 .calculation_results span {
   padding: 0rem;
+}
+
+@media (min-width: 765px) {
+
+  body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .main {
+    min-width: 750px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .results__empty,
+  .results__full {
+    height: 100%;
+  }
+
+  .results__empty,
+  .results__full {
+    border-radius: 0 0 0 4rem;
+  }
+
+  .form .form__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form .form__main * {
+    grid-column: span 2;
+  }
+
+  div.form__main__input:nth-child(2),
+  div.form__main__input:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .form,
+  .results .results__empty,
+  .results .results__full {
+    padding: 2.5rem;
+  }
+
+  .form__main__calc-btn {
+    max-width: 75%;
+  }
+
+  .calculation_results {
+    margin-top: 1rem;
+  }
+
+  .calculation_results tr:nth-child(1) span {
+    font-size: 3.5rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-lime);
+  }
+
+  .calculation_results tr:nth-child(2) span {
+    margin-top: 0.5rem;
+  }
+
+  .calculation_results tr:nth-child(1) td,
+  .calculation_results tr:nth-child(2) td {
+    padding: 1rem 0;
+  }
+
+
 }

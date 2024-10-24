@@ -26,120 +26,122 @@
   </head>
 
   <body>
-    <!-- <form class="form" action="/"> -->
-    <div class="form">
-      <div class="form__header">
-        <h1 class="form__header__title">Mortgage Calculator</h1>
-        <button class="form__header__reset-btn" onclick="resetInput()">
-          Clear All
-        </button>
-      </div>
-      <div class="form__main">
-        <div class="form__main__input">
-          <h2>Mortgage Amount</h2>
-          <div class="input">
-            <span>£</span>
-            <input
-              type="text"
-              oninput="formatNumber(this)"
-              name="mortgage_amount"
-              id="mortgage_amount"
-            />
-          </div>
-        </div>
-        <div class="form__main__input">
-          <h2>Mortgage Term</h2>
-          <div class="input">
-            <input
-              type="text"
-              oninput="formatNumber(this)"
-              name="mortgage_term"
-              id="mortgage_term"
-            /><span>years</span>
-          </div>
-        </div>
-        <div class="form__main__input">
-          <h2>Interest Rate</h2>
-          <div class="input">
-            <span>%</span
-            ><input
-              type="text"
-              step="0.01"
-              name="interest_rate"
-              id="interest_rate"
-            />
-          </div>
-        </div>
-        <div class="mortgage_type">
-          <h2>Mortgage Type</h2>
-          <div class="form__main__input__repayment">
-            <input
-              onchange="changeColor()"
-              type="radio"
-              name="mortgage_type"
-              id="repayment__input"
-            />
-            <label class="repayment__label" for="">Repayment</label>
-          </div>
-          <div class="form__main__input__interest-only">
-            <input
-              onchange="changeColor()"
-              type="radio"
-              name="mortgage_type"
-              id="interest-only__input"
-            />
-            <label class="interest-only__label" for="">Interest Only</label>
-          </div>
-        </div>
-        <div class="calc">
-          <button
-            onclick="calculateMonthlyPayment()"
-            class="form__main__calc-btn"
-          >
-            <img src="./assets/images/icon-calculator.svg" alt="" />
-            Calculate Repayment
+    <div class="main">
+      <!-- <form class="form" action="/"> -->
+      <div class="form">
+        <div class="form__header">
+          <h1 class="form__header__title">Mortgage Calculator</h1>
+          <button class="form__header__reset-btn" onclick="resetInput()">
+            Clear All
           </button>
         </div>
+        <div class="form__main">
+          <div class="form__main__input">
+            <h2>Mortgage Amount</h2>
+            <div class="input">
+              <span>£</span>
+              <input
+                type="text"
+                oninput="formatNumber(this)"
+                name="mortgage_amount"
+                id="mortgage_amount"
+              />
+            </div>
+          </div>
+          <div class="form__main__input">
+            <h2>Mortgage Term</h2>
+            <div class="input">
+              <input
+                type="text"
+                oninput="formatNumber(this)"
+                name="mortgage_term"
+                id="mortgage_term"
+              /><span>years</span>
+            </div>
+          </div>
+          <div class="form__main__input">
+            <h2>Interest Rate</h2>
+            <div class="input">
+              <input
+                type="text"
+                step="0.01"
+                name="interest_rate"
+                id="interest_rate"
+              />
+              <span>%</span>
+            </div>
+          </div>
+          <div class="mortgage_type">
+            <h2>Mortgage Type</h2>
+            <div class="form__main__input__repayment">
+              <input
+                onchange="changeColor()"
+                type="radio"
+                name="mortgage_type"
+                id="repayment__input"
+              />
+              <label class="repayment__label" for="">Repayment</label>
+            </div>
+            <div class="form__main__input__interest-only">
+              <input
+                onchange="changeColor()"
+                type="radio"
+                name="mortgage_type"
+                id="interest-only__input"
+              />
+              <label class="interest-only__label" for="">Interest Only</label>
+            </div>
+          </div>
+          <div class="calc">
+            <button
+              onclick="calculateMonthlyPayment()"
+              class="form__main__calc-btn"
+            >
+              <img src="./assets/images/icon-calculator.svg" alt="" />
+              Calculate Repayment
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- </form> -->
-    <div class="results">
-      <div class="results__empty">
-        <img
-          class="results__img"
-          src="./assets/images/illustration-empty.svg"
-          alt=""
-        />
-        <h1 class="results__title">Results shown here</h1>
-        <p class="results__p">
-          Complete the form and click “calculate repayments” to see what your
-          monthly repayments would be.
-        </p>
-      </div>
-      <div class="results__full hidden">
-        <h1 class="results__title">Your results</h1>
-        <p class="results__p">
-          Your results are shown below based on the information you provided. To
-          adjust the results, edit the form and click “calculate repayments”
-          again.
-        </p>
-        <div class="calculation_results">
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <h2>Your monthly repayments</h2>
-                  <span class="monthly_repayments"></span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h2>Total you'll repay over the term</h2>
-                  <span class="total_repayments"></span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- </form> -->
+      <div class="results">
+        <div class="results__empty">
+          <img
+            class="results__img"
+            src="./assets/images/illustration-empty.svg"
+            alt=""
+          />
+          <h1 class="results__title">Results shown here</h1>
+          <p class="results__p">
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="results__full hidden">
+          <h1 class="results__title">Your results</h1>
+          <p class="results__p">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div class="calculation_results">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <h2>Your monthly repayments</h2>
+                    <span class="monthly_repayments"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h2>Total you'll repay over the term</h2>
+                    <span class="total_repayments"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

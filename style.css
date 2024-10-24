@@ -141,7 +141,7 @@ h6 {
 
 .input {
   overflow: hidden;
-  border: 1px solid var(--clr-slate-900);
+  border: 1px solid var(--clr-slate-500);
   background-color: var(--clr-slate-100);
   border-radius: .25rem;
   display: flex;
@@ -170,7 +170,7 @@ h6 {
 
 .form__main__input__repayment,
 .form__main__input__interest-only {
-  border: 1px solid var(--clr-slate-900);
+  border: 1px solid var(--clr-slate-500);
   padding: 0.5rem 0.75rem;
   border-radius: .25rem;
   align-items: center;

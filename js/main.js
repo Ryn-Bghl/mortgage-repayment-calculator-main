@@ -54,9 +54,6 @@ function calculateMonthlyPayment() {
   var isInterestOnly =
     mortgageTypeRadioInputs[0].childNodes[5].childNodes[1].checked;
 
-  console.log(isRepayment);
-  console.log(isInterestOnly);
-
   // Convert the annual interest rate to a monthly rate
   let monthlyInterestRate = parseFloat(interestRateInput.value) / 100 / 12;
 
@@ -79,7 +76,8 @@ function calculateMonthlyPayment() {
   } else if (isInterestOnly) {
     // For interest-only, the monthly repayment is only the interest
     monthlyRepayment =
-      parseFloat(mortgageAmountInput.value.replace(",", "")) * monthlyInterestRate;
+      parseFloat(mortgageAmountInput.value.replace(",", "")) *
+      monthlyInterestRate;
 
     // Total repayment is all interest payments over the term, plus the mortgage amount (principal)
     totalRepayment =

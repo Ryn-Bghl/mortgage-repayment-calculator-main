@@ -186,8 +186,13 @@ body {
   gap: 0.75rem;
 }
 
+.mortgage_type *:not(h2) {
+  cursor: pointer;
+}
+
 .form__main__input__repayment,
 .form__main__input__interest-only {
+  cursor: pointer;
   border: 1px solid var(--clr-slate-500);
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;

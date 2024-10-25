@@ -175,7 +175,9 @@ const isComplete = () => {
 
 const correctify = (i) => {
   document.querySelectorAll(".error")[i].classList.add("hidden");
-  document.querySelectorAll(".input")[i].style.backgroundColor = "";
+  try {
+    document.querySelectorAll(".input")[i].style.backgroundColor = "";
+  } catch (err) {}
   document.querySelectorAll("div span:not(.error)")[i].style.color = "";
   document.querySelectorAll("div span:not(.error)")[i].style.borderColor = "";
   document.querySelectorAll(".input")[i].style.borderColor = "";

@@ -47,6 +47,7 @@
                 id="mortgage_amount"
               />
             </div>
+            <span class="error hidden ">This field is required</span>
           </div>
           <div class="form__main__input">
             <h2>Mortgage Term</h2>
@@ -58,6 +59,7 @@
                 id="mortgage_term"
               /><span>years</span>
             </div>
+            <span class="error hidden ">This field is required</span>
           </div>
           <div class="form__main__input">
             <h2>Interest Rate</h2>
@@ -70,6 +72,7 @@
               />
               <span>%</span>
             </div>
+            <span class="error hidden ">This field is required</span>
           </div>
           <div class="mortgage_type">
             <h2>Mortgage Type</h2>
@@ -91,10 +94,11 @@
               />
               <label class="interest-only__label" for="">Interest Only</label>
             </div>
+            <span class="error hidden ">This field is required</span>
           </div>
           <div class="calc">
             <button
-              onclick="calculateMonthlyPayment()"
+              onclick="isComplete();calculateMonthlyPayment()"
               class="form__main__calc-btn"
             >
               <img src="./assets/images/icon-calculator.svg" alt="" />

@@ -57,7 +57,7 @@ h6 {
   isolation: isolate
 }
 
-:root {
+:root {  
   /* breakpoint */
   --desktop-width: 1440px;
   --mobile-width: 375px;
@@ -75,6 +75,8 @@ h6 {
   --clr-slate-1000: hsl(202, 56%, 13%);
 
   /* font-size */
+  --fz-error: 0.75rem;
+  /* 12px */
   --fz-subtitle: 0.875rem;
   /* 14px */
   --fz-primary: 1rem;
@@ -148,6 +150,10 @@ body {
   padding-bottom: 0.5rem
 }
 
+.error {
+  color: var(--clr-red);
+  font-size: 0.75rem;
+}
 
 .input {
   overflow: hidden;

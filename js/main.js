@@ -10,10 +10,12 @@ var mortgageTypeRadioInputs = document.querySelectorAll(".mortgage_type");
 repaymentInput.addEventListener("click", () => {
   repaymentInput.childNodes[1].checked = true;
   interestOnlyInput.childNodes[1].checked = false;
+  changeColor();
 });
 interestOnlyInput.addEventListener("click", () => {
   interestOnlyInput.childNodes[1].checked = true;
   repaymentInput.childNodes[1].checked = false;
+  changeColor();
 });
 
 function changeColor() {

@@ -7,6 +7,15 @@ var mortgageTermInput = document.querySelector("#mortgage_term");
 var interestRateInput = document.querySelector("#interest_rate");
 var mortgageTypeRadioInputs = document.querySelectorAll(".mortgage_type");
 
+repaymentInput.addEventListener("click", () => {
+  repaymentInput.childNodes[1].checked = true;
+  interestOnlyInput.childNodes[1].checked = false;
+});
+interestOnlyInput.addEventListener("click", () => {
+  interestOnlyInput.childNodes[1].checked = true;
+  repaymentInput.childNodes[1].checked = false;
+});
+
 function changeColor() {
   if (
     interestOnlyInput.childNodes[1].checked == true &&
@@ -97,13 +106,26 @@ function calculateMonthlyPayment() {
 const isComplete = () => {
   if (mortgageAmountInput.value == "") {
     document.querySelectorAll(".error")[0].classList.remove("hidden");
+    document.querySelectorAll(".input")[0].style.backgroundColor =
+      "hsl(4, 69%, 50%)";
   }
+  document.querySelector(".input span").style.color = "white";
   if (mortgageTermInput.value == "") {
     document.querySelectorAll(".error")[1].classList.remove("hidden");
+    document.querySelectorAll(".input")[1].style.backgroundColor =
+      "hsl(4, 69%, 50%)";
   }
+  document.querySelector(
+    "div.form__main__input:nth-child(2) > div:nth-child(2) > span:nth-child(2)"
+  ).style.color = "white";
   if (interestRateInput.value == "") {
     document.querySelectorAll(".error")[2].classList.remove("hidden");
+    document.querySelectorAll(".input")[2].style.backgroundColor =
+      "hsl(4, 69%, 50%)";
   }
+  document.querySelector(
+    "div.form__main__input:nth-child(3) > div:nth-child(2) > span:nth-child(2)"
+  ).style.color = "white";
   if (
     !interestOnlyInput.childNodes[1].checked &&
     !repaymentInput.childNodes[1].checked

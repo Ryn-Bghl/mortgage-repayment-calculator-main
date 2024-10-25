@@ -42,7 +42,7 @@
               <span>£</span>
               <input
                 type="text"
-                oninput="formatNumber(this); document.querySelectorAll('.error')[0].classList.add('hidden');"
+                oninput="formatNumber(this); correctify(0);"
                 name="mortgage_amount"
                 id="mortgage_amount"
               />
@@ -54,7 +54,7 @@
             <div class="input">
               <input
                 type="text"
-                oninput="formatNumber(this); document.querySelectorAll('.error')[1].classList.add('hidden');"
+                oninput="formatNumber(this); correctify(1);"
                 name="mortgage_term"
                 id="mortgage_term"
               /><span>years</span>
@@ -65,7 +65,7 @@
             <h2>Interest Rate</h2>
             <div class="input">
               <input
-              oninput="document.querySelectorAll('.error')[2].classList.add('hidden');"
+              oninput="formatNumber(this);correctify(2);"
                 type="text"
                 step="0.01"
                 name="interest_rate"
@@ -79,7 +79,7 @@
             <h2>Mortgage Type</h2>
             <div class="form__main__input__repayment">
               <input
-                onchange="changeColor(); document.querySelectorAll('.error')[3].classList.add('hidden');"
+                onchange="changeColor(); correctify(3);"
                 type="radio"
                 name="mortgage_type"
                 id="repayment__input"
@@ -88,7 +88,7 @@
             </div>
             <div class="form__main__input__interest-only">
               <input
-                onchange="changeColor(); document.querySelectorAll('.error')[3].classList.add('hidden');"
+                onchange="changeColor(); correctify(3);"
                 type="radio"
                 name="mortgage_type"
                 id="interest-only__input"

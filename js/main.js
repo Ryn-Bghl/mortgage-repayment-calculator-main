@@ -49,19 +49,44 @@ function resetInput() {
   document.querySelectorAll(".error")[1].classList.add("hidden");
   document.querySelectorAll(".error")[2].classList.add("hidden");
   document.querySelectorAll(".error")[3].classList.add("hidden");
+  document.querySelectorAll(".input")[0].style.backgroundColor = "";
+  document.querySelector(".input span").style.color = "";
+  document.querySelectorAll(".input")[1].style.backgroundColor = "";
+  document.querySelector(
+    "div.form__main__input:nth-child(2) > div:nth-child(2) > span:nth-child(2)"
+  ).style.color = "";
+  document.querySelectorAll(".input")[2].style.backgroundColor = "";
+  document.querySelector(
+    "div.form__main__input:nth-child(3) > div:nth-child(2) > span:nth-child(2)"
+  ).style.color = "";
+  document.querySelectorAll(".input")[0].style.borderColor = "";
+  document.querySelectorAll(".input")[1].style.borderColor = "";
+  document.querySelectorAll(".input")[2].style.borderColor = "";
 }
 
 function formatNumber(input) {
   if (input.value != 0) {
-    // Remove everything except digits
-    let value = input.value.replace(/\D/g, "");
-    // Format the number using US locale (commas for thousands)
-    value = Number(value).toLocaleString("en-US");
-    input.value = value;
+    // Remove all characters except digits and the decimal point
+    let value = input.value.replace(/[^0-9.]/g, "");
+
+    // Ensure only one decimal point is allowed
+    const parts = value.split(".");
+    if (parts.length > 2) {
+      value = parts[0] + "." + parts[1]; // Keep only the first decimal
+    }
+
+    // Convert the integer part to a number and format with commas
+    let [integerPart, decimalPart] = value.split(".");
+    integerPart = parseInt(integerPart || "0").toLocaleString("en-US");
+
+    // Combine the formatted integer with the decimal part if present
+    input.value =
+      decimalPart !== undefined ? `${integerPart}.${decimalPart}` : integerPart;
   } else {
     input.value = "";
   }
 }
+
 /* calculateMonthlyPayment */
 function calculateMonthlyPayment() {
   document.querySelector(".results__empty").classList.add("hidden");
@@ -108,24 +133,27 @@ const isComplete = () => {
     document.querySelectorAll(".error")[0].classList.remove("hidden");
     document.querySelectorAll(".input")[0].style.backgroundColor =
       "hsl(4, 69%, 50%)";
+    document.querySelector(".input span").style.color = "white";
+    document.querySelectorAll(".input")[0].style.borderColor = "red";
   }
-  document.querySelector(".input span").style.color = "white";
   if (mortgageTermInput.value == "") {
     document.querySelectorAll(".error")[1].classList.remove("hidden");
     document.querySelectorAll(".input")[1].style.backgroundColor =
       "hsl(4, 69%, 50%)";
+    document.querySelector(
+      "div.form__main__input:nth-child(2) > div:nth-child(2) > span:nth-child(2)"
+    ).style.color = "white";
+    document.querySelectorAll(".input")[1].style.borderColor = "red";
   }
-  document.querySelector(
-    "div.form__main__input:nth-child(2) > div:nth-child(2) > span:nth-child(2)"
-  ).style.color = "white";
   if (interestRateInput.value == "") {
     document.querySelectorAll(".error")[2].classList.remove("hidden");
     document.querySelectorAll(".input")[2].style.backgroundColor =
       "hsl(4, 69%, 50%)";
+    document.querySelector(
+      "div.form__main__input:nth-child(3) > div:nth-child(2) > span:nth-child(2)"
+    ).style.color = "white";
+    document.querySelectorAll(".input")[2].style.borderColor = "red";
   }
-  document.querySelector(
-    "div.form__main__input:nth-child(3) > div:nth-child(2) > span:nth-child(2)"
-  ).style.color = "white";
   if (
     !interestOnlyInput.childNodes[1].checked &&
     !repaymentInput.childNodes[1].checked
@@ -141,4 +169,12 @@ const isComplete = () => {
   ) {
     calculateMonthlyPayment();
   }
+};
+
+const correctify = (i) => {
+  document.querySelectorAll(".error")[i].classList.add("hidden");
+  document.querySelectorAll(".input")[i].style.backgroundColor = "";
+  document.querySelectorAll("div span:not(.error)")[i].style.color = "";
+  document.querySelectorAll("div span:not(.error)")[i].style.borderColor = "";
+  document.querySelectorAll(".input")[i].style.borderColor = "";
 };

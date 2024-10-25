@@ -25,16 +25,21 @@ function changeColor() {
 }
 
 function resetInput() {
-  // TOFIX: change the radio input bgc and border color to default
+  document.querySelector(".results__empty").classList.remove("hidden");
+  document.querySelector(".results__full").classList.add("hidden");
   mortgageAmountInput.value = "";
   mortgageTermInput.value = "";
   interestRateInput.value = "";
-  mortgageTypeRadioInputs[0].childNodes[3].childNodes[1].checked = false;
-  mortgageTypeRadioInputs[0].childNodes[3].style.backgroundColor = "";
-  mortgageTypeRadioInputs[0].childNodes[3].style.borderColor = "";
-  mortgageTypeRadioInputs[0].childNodes[5].childNodes[1].checked = false;
-  mortgageTypeRadioInputs[0].childNodes[5].style.backgroundColor = "";
-  mortgageTypeRadioInputs[0].childNodes[5].style.borderColor = "";
+  repaymentInput.childNodes[1].checked = false;
+  repaymentInput.style.backgroundColor = "";
+  repaymentInput.style.borderColor = "";
+  interestOnlyInput.childNodes[1].checked = false;
+  interestOnlyInput.style.backgroundColor = "";
+  interestOnlyInput.style.borderColor = "";
+  document.querySelectorAll(".error")[0].classList.add("hidden");
+  document.querySelectorAll(".error")[1].classList.add("hidden");
+  document.querySelectorAll(".error")[2].classList.add("hidden");
+  document.querySelectorAll(".error")[3].classList.add("hidden");
 }
 
 function formatNumber(input) {
@@ -53,47 +58,28 @@ function calculateMonthlyPayment() {
   document.querySelector(".results__empty").classList.add("hidden");
   document.querySelector(".results__full").classList.remove("hidden");
 
-  var isRepayment =
-    mortgageTypeRadioInputs[0].childNodes[3].childNodes[1].checked;
-  var isInterestOnly =
-    mortgageTypeRadioInputs[0].childNodes[5].childNodes[1].checked;
-
-  // Convert the annual interest rate to a monthly rate
+  var isRepayment = repaymentInput.childNodes[1].checked;
+  var isInterestOnly = interestOnlyInput.childNodes[1].checked;
   let monthlyInterestRate = parseFloat(interestRateInput.value) / 100 / 12;
-
   let monthlyRepayment, totalRepayment;
 
-  // Check the repayment type: 'repayment' or 'interestOnly'
-if (condition) {
-    if (isRepayment) {
-      // Total number of payments (months)
-      let totalPayments = parseFloat(mortgageTermInput.value) * 12;
-  
-      // Calculate the monthly repayment using the amortization formula (repayment mortgage)
-      monthlyRepayment =
-        (parseFloat(mortgageAmountInput.value.replace(",", "")) *
-          monthlyInterestRate *
-          Math.pow(1 + monthlyInterestRate, totalPayments)) /
-        (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
-  
-      // Calculate the total repayment over the term
-      totalRepayment = monthlyRepayment * totalPayments;
-    } else if (isInterestOnly) {
-      // For interest-only, the monthly repayment is only the interest
-      monthlyRepayment =
-        parseFloat(mortgageAmountInput.value.replace(",", "")) *
-        monthlyInterestRate;
-  
-      // Total repayment is all interest payments over the term, plus the mortgage amount (principal)
-      totalRepayment =
-        monthlyRepayment * 12 * parseFloat(mortgageTermInput.value) +
-        parseFloat(mortgageAmountInput.value.replace(",", ""));
-    } else {
-      throw "Invalid repayment type!";
-} else {
-  console.log("ok");
-  
-}
+  if (isRepayment) {
+    let totalPayments = parseFloat(mortgageTermInput.value) * 12;
+    monthlyRepayment =
+      (parseFloat(mortgageAmountInput.value.replace(",", "")) *
+        monthlyInterestRate *
+        Math.pow(1 + monthlyInterestRate, totalPayments)) /
+      (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
+    totalRepayment = monthlyRepayment * totalPayments;
+  } else if (isInterestOnly) {
+    monthlyRepayment =
+      parseFloat(mortgageAmountInput.value.replace(",", "")) *
+      monthlyInterestRate;
+    totalRepayment =
+      monthlyRepayment * 12 * parseFloat(mortgageTermInput.value) +
+      parseFloat(mortgageAmountInput.value.replace(",", ""));
+  } else {
+    throw "Invalid repayment type!";
   }
 
   document.querySelector(".monthly_repayments").innerText =
@@ -108,7 +94,7 @@ if (condition) {
     });
 }
 
-const isComplete = (span) => {
+const isComplete = () => {
   if (mortgageAmountInput.value == "") {
     document.querySelectorAll(".error")[0].classList.remove("hidden");
   }
@@ -123,5 +109,14 @@ const isComplete = (span) => {
     !repaymentInput.childNodes[1].checked
   ) {
     document.querySelectorAll(".error")[3].classList.remove("hidden");
+  }
+  if (
+    mortgageAmountInput.value != "" &&
+    mortgageTermInput.value != "" &&
+    interestRateInput.value != "" &&
+    (interestOnlyInput.childNodes[1].checked ||
+      repaymentInput.childNodes[1].checked)
+  ) {
+    calculateMonthlyPayment();
   }
 };

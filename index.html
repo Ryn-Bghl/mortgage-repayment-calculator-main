@@ -42,7 +42,7 @@
               <span>£</span>
               <input
                 type="text"
-                oninput="formatNumber(this)"
+                oninput="formatNumber(this); document.querySelectorAll('.error')[0].classList.add('hidden');"
                 name="mortgage_amount"
                 id="mortgage_amount"
               />
@@ -54,7 +54,7 @@
             <div class="input">
               <input
                 type="text"
-                oninput="formatNumber(this)"
+                oninput="formatNumber(this); document.querySelectorAll('.error')[1].classList.add('hidden');"
                 name="mortgage_term"
                 id="mortgage_term"
               /><span>years</span>
@@ -65,6 +65,7 @@
             <h2>Interest Rate</h2>
             <div class="input">
               <input
+              oninput="document.querySelectorAll('.error')[2].classList.add('hidden');"
                 type="text"
                 step="0.01"
                 name="interest_rate"
@@ -78,7 +79,7 @@
             <h2>Mortgage Type</h2>
             <div class="form__main__input__repayment">
               <input
-                onchange="changeColor()"
+                onchange="changeColor(); document.querySelectorAll('.error')[3].classList.add('hidden');"
                 type="radio"
                 name="mortgage_type"
                 id="repayment__input"
@@ -87,7 +88,7 @@
             </div>
             <div class="form__main__input__interest-only">
               <input
-                onchange="changeColor()"
+                onchange="changeColor(); document.querySelectorAll('.error')[3].classList.add('hidden');"
                 type="radio"
                 name="mortgage_type"
                 id="interest-only__input"
@@ -98,7 +99,7 @@
           </div>
           <div class="calc">
             <button
-              onclick="isComplete();calculateMonthlyPayment()"
+              onclick="isComplete()"
               class="form__main__calc-btn"
             >
               <img src="./assets/images/icon-calculator.svg" alt="" />

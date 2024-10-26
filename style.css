@@ -448,4 +448,9 @@ DESKTOP VERSION
   input {
     cursor: pointer;
   }
+
+  .form__header {
+    display: flex;
+    justify-content: space-between;
+  }
 }
